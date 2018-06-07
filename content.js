@@ -6,15 +6,15 @@ const HIDE_TRAINERROAD = false;
 function gtfoutside() {
     console.log("Running GTFOutside");
     var activities = document.getElementsByClassName("activity");
-    hideZwift(activities)
+    hideActivities(activities)
 }
 
-function hideZwift(activities) {
+function hideActivities(activities) {
     for (var i = 0; i < activities.length; i++) {
         for (var j = 0; j < activities[i].childNodes.length; j++) {
             var activityChildNode = activities[i].childNodes[j];
             if (activityChildNode.className == "entry-header" && checkHideActivity(activityChildNode)) {
-                console.log("Found a Zwift, hiding ActivityID: " + activities[i].id);
+                console.log("Matched activity, hiding ActivityID: " + activities[i].id);
                 activities[i].style.display = "none";
                 break;
             }
