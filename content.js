@@ -6,7 +6,7 @@ const HIDE_TRAINERROAD = false;
 function gtfoutside() {
     console.log("Running GTFOutside");
     var activities = document.getElementsByClassName("activity");
-    hideActivities(activities)
+    hideActivities(activities);
 }
 
 function hideActivities(activities) {
@@ -32,16 +32,21 @@ function checkHideActivity(elem) {
     return false
 }
 
-function init() {
-    var button = document.createElement("button");
-    button.id = "GTFOutside";
-    button.textContent = "gtfoutside";
-    button.className = "button btn btn-sm btn-primary";
-    button.style.fontSize = "12px";
-    button.addEventListener("click", gtfoutside, false);
+function setupButton() {
+    var btn = document.createElement("button");
+    btn.id = "GTFOutside";
+    btn.textContent = "gtfoutside";
+    btn.className = "button btn btn-sm btn-primary";
+    btn.style.fontSize = "12px";
+    btn.addEventListener("click", gtfoutside, false);
 
+    return btn;
+}
+
+function init() {
+    var btn = setupButton();
     var uploadMenu = document.getElementsByClassName("upload-menu")[0];
-    uploadMenu.parentNode.insertBefore(button, uploadMenu.nextSibling);
+    uploadMenu.parentNode.insertBefore(btn, uploadMenu.nextSibling);
 
     console.log("Initialised GTFOutside");
     window.addEventListener("load", gtfoutside, false);
