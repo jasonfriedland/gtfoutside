@@ -1,4 +1,4 @@
-// Hides "rode on Zwift" activities on Strava.
+// Hides "rode on Zwift/Trainerroad/trainer" activities on Strava.
 
 const HIDE_ZWIFT = true;
 const HIDE_TRAINERROAD = false;
