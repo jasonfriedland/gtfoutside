@@ -1,7 +1,7 @@
 // Hides "rode on Zwift/Trainerroad/trainer" activities on Strava.
 
 const HIDE_ZWIFT = true;
-const HIDE_TRAINERROAD = false;
+const HIDE_TRAINERROAD = true;
 
 function gtfoutside() {
     console.log("Running GTFOutside");
@@ -26,7 +26,7 @@ function checkHideActivity(elem) {
     if (HIDE_ZWIFT && elem.innerText.indexOf("rode on Zwift") !== -1) {
         return true;
     }
-    if (HIDE_TRAINERROAD && elem.innerText.indexOf("rode on Trainerroad") !== -1) {
+    if (HIDE_TRAINERROAD && elem.innerText.indexOf("rode on TrainerRoad") !== -1) {
         return true;
     }
     return false
